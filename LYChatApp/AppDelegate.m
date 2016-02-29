@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "XMPPFramework.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +17,14 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    [self.window makeKeyAndVisible];
+    
+    //登录界面导航控制器
+    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UINavigationController *navigationVC = [storyBoard instantiateViewControllerWithIdentifier:@"firstVC"];
+//    self.window.rootViewController = navigationVC;
+    [self.window.rootViewController presentViewController:navigationVC animated:YES completion:nil];
     return YES;
 }
 
